@@ -17,43 +17,26 @@ The app will open at `http://localhost:5173`
 
 ## Client Folder Structure
 
-The `src/` folder contains all source code.
+The `src/` folder contains all source code. Each page has a matching `.jsx` and `.css` file at the top level of `src/`.
 
-### pages/
-Each page has a matching `.jsx` and `.css` file at the top level of `src/`:
-
-- `home.jsx` — landing page with hero search bar, quick accessibility filter chips, and a popular venues grid
-- `explore.jsx` — full venue search and browse page with a sidebar filter panel and sort controls
-- `filter.jsx` — dedicated full-screen page for selecting accessibility filters
-- `venue.jsx` — individual venue detail page showing aggregated accessibility data, category ratings, and community reviews
-- `fullreview.jsx` — full detail view of a single review including all advanced sections and photos
-- `profile.jsx` — authenticated user profile showing editable info, saved venues, and the user's submitted reviews
-- `signin.jsx` / `signup.jsx` — email/password authentication pages
+### Pages
+- `home.jsx` — landing page with search bar, filter chips, and popular venues grid
+- `explore.jsx` — venue browsing with sidebar filters and sort controls
+- `filter.jsx` — full-screen accessibility filter selection
+- `venue.jsx` — venue detail with accessibility overview, category ratings, and reviews
+- `fullreview.jsx` — full single review detail including advanced sections and photos
+- `profile.jsx` — editable user profile, saved venues, and submitted reviews
+- `signin.jsx` / `signup.jsx` — email/password authentication
 
 `App.jsx` defines all routes. `main.jsx` is the app entry point.
 
-### components/
-Shared UI pieces used across multiple pages:
+### Other Folders
+- `components/` — `Header.jsx`, `Footer.jsx`, `VenueCard.jsx`, `ReviewForm.jsx`
+- `db/` — DB functions split by type: `venues.js`, `reviews.js`, `users.js`, `saved.js`. Import from `index.js`
+- `data/` — `access-filters.txt` builds the filter UI at runtime; `reviewFormData.js` defines advanced review sections
+- `utils/filterStorage.js` — persists selected filters to `localStorage` across pages
 
-- `Header.jsx`, `Footer.jsx`,
-- `VenueCard.jsx` — reusable venue cards
-- `ReviewForm.jsx` — accessibility review form structure
-
-### db/
-All Firestore access functions organized by data type: `venues.js`, `reviews.js`, `users.js`, `saved.js`.  
-Import from `index.js` which re-exports everything so pages can pull from a single location.
-
-### data/
-Static config files:
-
-- `access-filters.txt` — defines all filter categories and tags, read at runtime to build the filter UI
-- `reviewFormData.js` — defines the advanced review sections (e.g. Parking, Bathrooms, Staff) used in the review form and venue page
-
-### utils/
-- `filterStorage.js` — saves selected filters to `localStorage` so they persist across pages
-
-### Styles
-Styles follow the same per-page split as the `.jsx` files. Shared global styles live in `styles/ui.css`.
+Styles follow a per-page `.css` split alongside each `.jsx`. Shared global styles live in `styles/ui.css`.
 
 ## Front-End
 Built with React + Vite. React Router DOM handles all client-side routing. Routes are defined in `App.jsx`:
