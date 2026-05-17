@@ -39,18 +39,22 @@ The `src/` folder contains all source code. Each page has a matching `.jsx` and 
 Styles follow a per-page `.css` split alongside each `.jsx`. Shared global styles live in `styles/ui.css`.
 
 ## Front-End
-Built with React + Vite. React Router DOM handles all client-side routing. Routes are defined in `App.jsx`:
 
-| Path | Description |
-|---|---|
-| `/` | Landing page with search bar, quick filter chips, and popular venues |
-| `/explore` | Full venue listing with search, sort, and sidebar accessibility filters |
-| `/explore/filter` | Full filter tag page for selecting from all accessibility filter categories |
-| `/venues/:venueId` | Venue accessibility overview, category ratings, and community reviews |
-| `/venues/:venueId/review` | Opens the review form for the particular venueId |
-| `/venues/:venueId/reviews/:reviewId` | Expanded single review with advanced section ratings, tags, and photos |
-| `/profile` | Editable user profile, saved venues, and submitted reviews |
-| `/signin` / `/signup` | Sign in or register with email and password |
+Built with React + Vite. React Router DOM handles all client-side routing. The app has the following routes:
+
+`/` — Landing page with search bar, quick filter chips, and popular venues
+
+`/explore` — Full venue listing with search, sort, and sidebar accessibility filters
+
+`/explore/filter` — Full filter tag page for selecting from all accessibility filter categories
+
+`/venues/:venueId` — Venue accessibility overview, category ratings, and community reviews
+
+`/venues/:venueId/review` — Opens the review form for the particular venueId
+
+`/venues/:venueId/reviews/:reviewId` — Expanded single review with advanced section ratings, tags, and photos
+
+`/profile` — Editable user profile, saved venues, and submitted reviews
 
 The filter system is driven by `access-filters.txt`. Selected filters are shared across all pages via localStorage.
 
