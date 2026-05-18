@@ -185,3 +185,12 @@
 .quick-filter-chip--active:hover {
     background-color: #4caf50;
 }
+
+.notice {
+    background: #E5E6FA;
+    border-bottom: 1px solid #c8caef;
+    text-align: center;
+    padding: 0.65rem 1rem;
+    font-size: 14px;
+    color: #13221a;
+}

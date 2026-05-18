@@ -59,6 +59,10 @@ export default function HomePage() {
         <div className="home-page">
             <Header navItems={navItems} />
 
+            <div className="notice">
+                <strong>Notice:</strong> This project is transitioning to open source. The source code will be publicly available effective <strong>May 27, 2026</strong>.
+            </div>
+
             <section className="hero">
                 <h1 className="hero__heading">
                     Find and share accessibility experiences
