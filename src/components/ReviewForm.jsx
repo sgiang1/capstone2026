@@ -347,8 +347,6 @@ function ReviewForm({ isOpen, onClose, onSubmitted }) {
         }
 
         setFormErrors({})
-        const firstId = advancedReviewSections[0]?.id
-        if (firstId) setOpenSections({ [firstId]: true })
         setCurrentStep(2)
     }
 

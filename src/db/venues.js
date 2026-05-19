@@ -78,7 +78,11 @@ export async function getVenues(filters = {}) {
     let venues = (await getDocs(q_ref)).docs.map((d) => ({ ...d.data(), id: d.id }))
 
     if (q) {
-        venues = venues.filter((v) => v.name.toLowerCase().includes(q.toLowerCase()))
+        const lq = q.toLowerCase()
+        venues = venues.filter((v) =>
+            v.name.toLowerCase().includes(lq) ||
+            v.searchTags?.some((tag) => tag.toLowerCase().includes(lq))
+        )
     }
     if (tags?.length > 1) {
         venues = venues.filter((v) => tags.every((tag) => (v.accessTags ?? []).map((t) => t.toLowerCase()).includes(tag.toLowerCase())))
